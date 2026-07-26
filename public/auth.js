@@ -1,4 +1,4 @@
-const supabaseUrl = "sb_publishable_HOXyV8I8YIFNm9l5zI1EJQ_9UajP_gO";
+const supabaseUrl = "https://qwslbmgfroejtkxqnxho.supabase.co";
 const supabaseAnonKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InF3c2xibWdmcm9lanRreHFueGhvIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODQ5OTQ5NTYsImV4cCI6MjEwMDU3MDk1Nn0.ZQaJheDyBm8n_E6rpQanB84gHKypLa2Ldg8RMiXrGws";
 
 const supabase = window.supabase.createClient(
