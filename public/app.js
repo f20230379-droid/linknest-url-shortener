@@ -1,3 +1,15 @@
+(async () => {
+const {
+    data: { session }
+} = await window.supabaseClient.auth.getSession();
+
+if (!session) {
+    window.location.href = "/login.html";
+    return;
+}
+
+
+const user = session.user;
 const form = document.querySelector("#link-form");
 const destinationInput = document.querySelector("#destination");
 const aliasInput = document.querySelector("#alias");
@@ -113,3 +125,4 @@ form.addEventListener("submit", async (event) => {
 
 document.querySelector("#refresh-button").addEventListener("click", loadDashboard);
 loadDashboard();
+})();
