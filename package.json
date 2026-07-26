@@ -1,0 +1,14 @@
+{
+  "name": "linknest-url-shortener",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A dependency-free URL shortener with click analytics.",
+  "scripts": {
+    "dev": "node server.js",
+    "start": "node server.js",
+    "check": "node --check server.js"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="LinkNest is a simple, private URL shortener with click analytics." />
+    <title>LinkNest — Short links, clear insights</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <main class="shell">
+      <nav class="topbar" aria-label="Main navigation">
+        <a class="brand" href="/" aria-label="LinkNest home"><span class="brand-mark">↗</span>LinkNest</a>
+        <span class="status"><i></i> Your links are private</span>
+      </nav>
+
+      <section class="hero">
+        <p class="eyebrow">YOUR PERSONAL LINK HUB</p>
+        <h1>Short links.<br /><em>Clearer insights.</em></h1>
+        <p class="hero-copy">Create tidy links, give them a memorable name, and see what people click — all in one quiet, focused space.</p>
+      </section>
+
+      <section class="create-card" aria-labelledby="create-heading">
+        <div class="card-heading">
+          <div>
+            <p class="eyebrow">NEW LINK</p>
+            <h2 id="create-heading">Make it easier to share</h2>
+          </div>
+          <span class="spark">✦</span>
+        </div>
+        <form id="link-form" novalidate>
+          <label for="destination">Destination URL</label>
+          <input id="destination" name="destination" type="url" placeholder="https://your-long-link.com/with-a-lot-to-say" autocomplete="url" required />
+          <div class="alias-row">
+            <div>
+              <label for="alias">Custom ending <span>(optional)</span></label>
+              <div class="alias-input"><span id="domain-prefix">linknest/</span><input id="alias" name="alias" type="text" placeholder="my-link" maxlength="32" autocomplete="off" /></div>
+            </div>
+            <button id="submit-button" type="submit">Create link <span>→</span></button>
+          </div>
+          <p id="form-message" class="form-message" role="alert"></p>
+        </form>
+      </section>
+
+      <section class="overview" aria-labelledby="overview-heading">
+        <div class="section-heading"><div><p class="eyebrow">OVERVIEW</p><h2 id="overview-heading">Your link activity</h2></div><button id="refresh-button" class="text-button" type="button">Refresh ↻</button></div>
+        <div class="stats" aria-live="polite">
+          <article><p>Active links</p><strong id="link-count">—</strong><small>Ready to share</small></article>
+          <article><p>Total clicks</p><strong id="click-count">—</strong><small>Across all links</small></article>
+          <article><p>Latest activity</p><strong id="latest-visit" class="date-stat">—</strong><small>Most recent visit</small></article>
+        </div>
+      </section>
+
+      <section class="links-section" aria-labelledby="links-heading">
+        <div class="section-heading"><div><p class="eyebrow">LIBRARY</p><h2 id="links-heading">Your shortened links</h2></div></div>
+        <div class="link-list" id="link-list" aria-live="polite"></div>
+      </section>
+    </main>
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    <template id="empty-state"><div class="empty-state"><span>⌁</span><h3>Your library is waiting</h3><p>Turn your first long URL into a tidy link above.</p></div></template>
+    <script src="/app.js"></script>
+  </body>
+</html>
