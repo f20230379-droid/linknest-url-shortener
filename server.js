@@ -264,6 +264,7 @@ const server = http.createServer(async (request, response) => {
     if (pathname === "/" || pathname === "/index.html") return sendFile(response, "index.html");
     if (pathname === "/styles.css") return sendFile(response, "styles.css");
     if (pathname === "/app.js") return sendFile(response, "app.js");
+    if (pathname === "/auth.js") return sendFile(response, "auth.js");
     if (pathname === "/health") return sendJson(response, 200, { status: "ok", storage: USE_REMOTE_STORE ? "supabase" : "local" });
 
     const code = pathname.slice(1).toLowerCase();
