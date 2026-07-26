@@ -5,60 +5,126 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login • LinkNest</title>
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <script src="/auth.js"></script>
 
+    <link rel="stylesheet" href="/styles.css">
+
     <style>
         body{
-            font-family:Arial,Helvetica,sans-serif;
+            margin:0;
+            min-height:100vh;
             display:flex;
             justify-content:center;
             align-items:center;
-            height:100vh;
-            background:#f5f5f5;
+            background:#f6f5ef;
+            font-family:Manrope,sans-serif;
         }
 
-        .card{
+        .login-card{
+            width:420px;
             background:white;
-            padding:30px;
-            border-radius:12px;
-            width:350px;
-            box-shadow:0 10px 30px rgba(0,0,0,.1);
+            border-radius:28px;
+            padding:42px;
+            box-shadow:0 30px 60px rgba(0,0,0,.08);
+            border:1px solid #ece8df;
+        }
+
+        .logo{
+            font-size:32px;
+            font-weight:800;
+            color:#12211b;
+            margin-bottom:10px;
+        }
+
+        .subtitle{
+            color:#65716b;
+            margin-bottom:35px;
+            line-height:1.6;
         }
 
         input{
             width:100%;
-            padding:12px;
-            margin:10px 0;
+            padding:16px;
+            margin-bottom:18px;
+            border-radius:16px;
+            border:1px solid #d9d7cf;
+            font-size:15px;
+            font-family:inherit;
             box-sizing:border-box;
+        }
+
+        input:focus{
+            outline:none;
+            border-color:#6d9d83;
+            box-shadow:0 0 0 4px rgba(109,157,131,.15);
         }
 
         button{
             width:100%;
-            padding:12px;
+            padding:16px;
+            border:none;
+            border-radius:16px;
+            font-size:16px;
+            font-weight:700;
+            font-family:inherit;
             cursor:pointer;
+            transition:.25s;
+        }
+
+        #loginBtn{
+            background:#456d5b;
+            color:white;
+        }
+
+        #loginBtn:hover{
+            background:#365648;
+        }
+
+        #signupBtn{
+            margin-top:14px;
+            background:#f2eee6;
+            color:#1d2a23;
+        }
+
+        #signupBtn:hover{
+            background:#e7e2d8;
         }
 
         #message{
-            margin-top:15px;
-            color:red;
+            margin-top:20px;
+            text-align:center;
+            font-weight:600;
         }
     </style>
 </head>
 
 <body>
 
-<div class="card">
+<div class="login-card">
 
-<h2>LinkNest Login</h2>
+<div class="logo">
+↗ LinkNest
+</div>
 
-<input id="email" placeholder="Email">
+<p class="subtitle">
+Welcome back. Sign in to manage your short links and analytics.
+</p>
+
+<input id="email" type="email" placeholder="Email">
 
 <input id="password" type="password" placeholder="Password">
 
-<button id="loginBtn">Login</button>
+<button id="loginBtn">
+Sign In
+</button>
 
-<button id="signupBtn" style="margin-top:10px;">
+<button id="signupBtn">
 Create Account
 </button>
 
